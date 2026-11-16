@@ -154,11 +154,11 @@ function initVCardDownload() {
     'ORG:Techivibe',
     'TITLE:Security Researcher & Full-Stack Developer',
     'EMAIL;TYPE=INTERNET,PREF:itstechy40@gmail.com',
-    'URL:https://ramaneon.github.io/techivibe/',
+    'URL:https://techivibe.in',
     'X-SOCIALPROFILE;type=telegram:https://t.me/techivibe',
     'X-SOCIALPROFILE;type=youtube:https://www.youtube.com/@Techivibe',
     'X-SOCIALPROFILE;type=github:https://github.com/ramaneon',
-    'NOTE:Techivibe Link Hub: https://ramaneon.github.io/techivibe/ | Telegram: @techivibe',
+    'NOTE:Techivibe Official: https://techivibe.in | Hub: https://ramaneon.github.io/techivibe/ | Telegram: @techivibe',
     'END:VCARD'
   ].join('\r\n');
 

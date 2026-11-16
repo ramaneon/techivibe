@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>Techivibe · Interactive Social Hub & Contacts</title>
-  <meta name="description" content="Official mobile-first link hub for Techivibe & Raman Kumar (@ramaneon). Telegram, YouTube, GitHub, Portfolio & Direct Contacts." />
+  <title>Techivibe · Interactive Social Hub & Apps</title>
+  <meta name="description" content="Official link hub for Techivibe & Raman Kumar (@ramaneon). Telegram, YouTube, Live Apps (SOCNeon, APK Decompiler, Drive Analyzer), GitHub, and Direct Contacts." />
   <meta name="theme-color" content="#07080c" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Techivibe · Raman Kumar (@ramaneon)" />
-  <meta property="og:description" content="Official interactive link hub. Telegram, YouTube, GitHub, Instagram, and direct contacts." />
+  <meta property="og:description" content="Official links from techivibe.in: Telegram, YouTube, Live Security Tools, AI Systems, and Socials." />
   <meta property="og:url" content="https://ramaneon.github.io/techivibe/" />
   <meta property="og:type" content="website" />
 
@@ -45,7 +45,7 @@
     <header class="mobile-top-bar">
       <div class="top-status-badge">
         <span class="status-pulse"></span>
-        <span class="status-text">Active Now</span>
+        <span class="status-text">techivibe.in ecosystem</span>
       </div>
       <div class="top-actions">
         <button class="top-btn" id="theme-btn" title="Toggle Theme" aria-label="Toggle Theme">
@@ -75,23 +75,24 @@
         <h1 class="profile-name">Techivibe<span class="accent-dot">.</span></h1>
         <p class="profile-sub">Raman Kumar · <span class="profile-handle">@ramaneon</span></p>
         <p class="profile-bio">
-          Security Researcher, Full-Stack Engineer &amp; Creator. Fast tools, privacy-first software &amp; community drops.
+          Security Researcher &amp; Full-Stack Engineer. Building offline tools, reverse engineering utilities, AI systems &amp; creator @Techivibe.
         </p>
       </div>
 
       <!-- Quick Action Metrics / Tags -->
       <div class="profile-chips">
+        <a href="https://techivibe.in" target="_blank" rel="noopener" class="chip-pill" title="Visit Official Website">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span>techivibe.in</span>
+        </a>
         <button class="chip-pill" id="qr-trigger-btn">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
           <span>Share QR</span>
         </button>
         <button class="chip-pill" id="vcard-btn">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           <span>Save Contact</span>
         </button>
-        <span class="chip-pill info-chip">
-          <span>🚀 Delhi, IN</span>
-        </span>
       </div>
     </section>
 
@@ -99,16 +100,16 @@
     <div class="search-filter-wrap">
       <div class="search-box">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="link-search" placeholder="Search channels, handles, or tools..." autocomplete="off" spellcheck="false" />
+        <input type="text" id="link-search" placeholder="Search apps, telegram, repos, or links..." autocomplete="off" spellcheck="false" />
         <button class="clear-search-btn" id="clear-search" style="display: none;">✕</button>
       </div>
 
       <!-- Category Filter Tabs -->
       <div class="filter-tabs" role="tablist">
         <button class="tab-btn active" data-category="all" role="tab">All Links</button>
-        <button class="tab-btn" data-category="community" role="tab">Community</button>
-        <button class="tab-btn" data-category="media" role="tab">Media &amp; Social</button>
-        <button class="tab-btn" data-category="code" role="tab">Code &amp; Portfolio</button>
+        <button class="tab-btn" data-category="community" role="tab">Telegram &amp; Social</button>
+        <button class="tab-btn" data-category="apps" role="tab">Live Apps</button>
+        <button class="tab-btn" data-category="projects" role="tab">Software &amp; AI</button>
         <button class="tab-btn" data-category="contact" role="tab">Inquiries</button>
       </div>
     </div>
@@ -116,8 +117,10 @@
     <!-- Links List -->
     <main class="links-container" id="links-container">
 
-      <!-- 1. TELEGRAM (FEATURED PRIORITY) -->
-      <div class="link-card featured-link" data-category="community" data-title="telegram channel techivibe chat updates community">
+      <!-- ═════════ 1. COMMUNITY & SOCIAL CHANNELS ═════════ -->
+
+      <!-- TELEGRAM CHANNEL (VIP HUB) -->
+      <div class="link-card featured-link" data-category="community" data-title="telegram channel techivibe chat updates tools community">
         <div class="card-glow"></div>
         <a href="https://t.me/techivibe" target="_blank" rel="noopener" class="link-content">
           <div class="link-icon-box tg-bg">
@@ -130,7 +133,7 @@
               <span class="link-name">Telegram Channel</span>
               <span class="hot-badge">VIP HUB</span>
             </div>
-            <p class="link-sub">@techivibe · Official updates, tools &amp; announcements</p>
+            <p class="link-sub">@techivibe · Official tool releases, scripts &amp; community</p>
           </div>
         </a>
         <div class="card-btn-group">
@@ -140,7 +143,7 @@
         </div>
       </div>
 
-      <!-- 2. TELEGRAM PERSONAL / DM -->
+      <!-- TELEGRAM PERSONAL / DM -->
       <div class="link-card" data-category="community" data-title="telegram dm direct message chat ramaneon">
         <div class="card-glow"></div>
         <a href="https://t.me/ramaneon" target="_blank" rel="noopener" class="link-content">
@@ -151,10 +154,10 @@
           </div>
           <div class="link-texts">
             <div class="link-headline">
-              <span class="link-name">Direct Telegram DM</span>
+              <span class="link-name">Telegram Direct DM</span>
               <span class="mini-tag">Direct Chat</span>
             </div>
-            <p class="link-sub">@ramaneon · Quick personal reach-out</p>
+            <p class="link-sub">@ramaneon · Direct private messaging</p>
           </div>
         </a>
         <div class="card-btn-group">
@@ -164,8 +167,8 @@
         </div>
       </div>
 
-      <!-- 3. YOUTUBE -->
-      <div class="link-card" data-category="media" data-title="youtube channel videos tutorials techivibe">
+      <!-- YOUTUBE -->
+      <div class="link-card" data-category="community" data-title="youtube channel videos tutorials techivibe breakdowns">
         <div class="card-glow"></div>
         <a href="https://www.youtube.com/@Techivibe" target="_blank" rel="noopener" class="link-content">
           <div class="link-icon-box yt-bg">
@@ -177,7 +180,7 @@
             <div class="link-headline">
               <span class="link-name">YouTube Channel</span>
             </div>
-            <p class="link-sub">@Techivibe · Tech breakdowns, guides &amp; demos</p>
+            <p class="link-sub">@Techivibe · Tech breakdowns, security &amp; builds</p>
           </div>
         </a>
         <div class="card-btn-group">
@@ -187,32 +190,8 @@
         </div>
       </div>
 
-      <!-- 4. GITHUB -->
-      <div class="link-card" data-category="code" data-title="github repositories code ramaneon open source">
-        <div class="card-glow"></div>
-        <a href="https://github.com/ramaneon" target="_blank" rel="noopener" class="link-content">
-          <div class="link-icon-box gh-bg">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </div>
-          <div class="link-texts">
-            <div class="link-headline">
-              <span class="link-name">GitHub Repos</span>
-              <span class="mini-tag">Open Source</span>
-            </div>
-            <p class="link-sub">@ramaneon · SOC tools, security projects &amp; scripts</p>
-          </div>
-        </a>
-        <div class="card-btn-group">
-          <button class="action-icon-btn copy-btn" data-copy="https://github.com/ramaneon" title="Copy GitHub Link" aria-label="Copy link">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- 5. INSTAGRAM -->
-      <div class="link-card" data-category="media" data-title="instagram reels stories techivibe photos">
+      <!-- INSTAGRAM -->
+      <div class="link-card" data-category="community" data-title="instagram reels stories techivibe behind the scenes">
         <div class="card-glow"></div>
         <a href="https://www.instagram.com/techivibe/" target="_blank" rel="noopener" class="link-content">
           <div class="link-icon-box ig-bg">
@@ -224,7 +203,7 @@
             <div class="link-headline">
               <span class="link-name">Instagram</span>
             </div>
-            <p class="link-sub">@techivibe · Behind the scenes, setups &amp; reels</p>
+            <p class="link-sub">@techivibe · Setups, updates &amp; reels</p>
           </div>
         </a>
         <div class="card-btn-group">
@@ -234,8 +213,86 @@
         </div>
       </div>
 
-      <!-- 6. FULL 3D PORTFOLIO WEBSITE -->
-      <div class="link-card" data-category="code" data-title="portfolio interactive 3d website ramaneon profile">
+      <!-- ═════════ 2. LIVE WEB APPS (FROM TECHIVIBE.IN) ═════════ -->
+
+      <!-- SOCNEON LIVE APP -->
+      <div class="link-card" data-category="apps" data-title="socneon live app soc log analyzer mitre threat detection security">
+        <div class="card-glow"></div>
+        <a href="https://ramaneon.github.io/socneon/" target="_blank" rel="noopener" class="link-content">
+          <div class="link-icon-box soc-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="link-texts">
+            <div class="link-headline">
+              <span class="link-name">SOCNeon — Log Analyzer</span>
+              <span class="live-badge">Live App</span>
+            </div>
+            <p class="link-sub">100% offline browser threat analyzer &amp; MITRE mapper</p>
+          </div>
+        </a>
+        <div class="card-btn-group">
+          <button class="action-icon-btn copy-btn" data-copy="https://ramaneon.github.io/socneon/" title="Copy SOCNeon Link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- APK DECOMPILER LIVE APP -->
+      <div class="link-card" data-category="apps" data-title="apk decompiler live app android reverse engineering manifest tools">
+        <div class="card-glow"></div>
+        <a href="https://ramaneon.github.io/apk-decompiler/" target="_blank" rel="noopener" class="link-content">
+          <div class="link-icon-box apk-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <div class="link-texts">
+            <div class="link-headline">
+              <span class="link-name">APK Decompiler</span>
+              <span class="live-badge">Live App</span>
+            </div>
+            <p class="link-sub">In-browser Android reverse engineering &amp; manifest inspect</p>
+          </div>
+        </a>
+        <div class="card-btn-group">
+          <button class="action-icon-btn copy-btn" data-copy="https://ramaneon.github.io/apk-decompiler/" title="Copy APK Decompiler Link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- DRIVE ANALYZER LIVE APP -->
+      <div class="link-card" data-category="apps" data-title="drive analyzer storage junk visualization clean privacy live app">
+        <div class="card-glow"></div>
+        <a href="https://ramaneon.github.io/drive-analyzer/" target="_blank" rel="noopener" class="link-content">
+          <div class="link-icon-box drive-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <div class="link-texts">
+            <div class="link-headline">
+              <span class="link-name">Drive Analyzer</span>
+              <span class="live-badge">Live App</span>
+            </div>
+            <p class="link-sub">Private local storage junk analysis &amp; visualization</p>
+          </div>
+        </a>
+        <div class="card-btn-group">
+          <button class="action-icon-btn copy-btn" data-copy="https://ramaneon.github.io/drive-analyzer/" title="Copy Drive Analyzer Link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D WEB PORTFOLIO (RAMANEON PROFILE) -->
+      <div class="link-card" data-category="apps" data-title="portfolio interactive 3d website ramaneon profile webgl">
         <div class="card-glow"></div>
         <a href="https://ramaneon.github.io/profile/" target="_blank" rel="noopener" class="link-content">
           <div class="link-icon-box pf-bg">
@@ -247,10 +304,10 @@
           </div>
           <div class="link-texts">
             <div class="link-headline">
-              <span class="link-name">3D Web Portfolio</span>
+              <span class="link-name">3D WebGL Portfolio</span>
               <span class="mini-tag">Interactive</span>
             </div>
-            <p class="link-sub">ramaneon.github.io/profile · Full journey &amp; live apps</p>
+            <p class="link-sub">ramaneon.github.io/profile · Full journey &amp; interactive modules</p>
           </div>
         </a>
         <div class="card-btn-group">
@@ -260,8 +317,112 @@
         </div>
       </div>
 
-      <!-- 7. LINKEDIN -->
-      <div class="link-card" data-category="contact" data-title="linkedin professional network raman kumar career">
+      <!-- ═════════ 3. SOFTWARE & REPOSITORIES (FROM TECHIVIBE.IN) ═════════ -->
+
+      <!-- JARVIS V2 REPOSITORY -->
+      <div class="link-card" data-category="projects" data-title="jarvis v2 autonomous ai assistant autopilot desktop voice python repo">
+        <div class="card-glow"></div>
+        <a href="https://github.com/ramaneon/jarvisV2" target="_blank" rel="noopener" class="link-content">
+          <div class="link-icon-box jarvis-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <div class="link-texts">
+            <div class="link-headline">
+              <span class="link-name">JARVIS v2 — Autonomous AI</span>
+              <span class="mini-tag">Core Repo</span>
+            </div>
+            <p class="link-sub">Native offline PC autopilot controller with sub-second latency</p>
+          </div>
+        </a>
+        <div class="card-btn-group">
+          <button class="action-icon-btn copy-btn" data-copy="https://github.com/ramaneon/jarvisV2" title="Copy JARVIS Link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ROUTINE ANDROID APK -->
+      <div class="link-card" data-category="projects" data-title="routine android apk kotlin automation app background optimization">
+        <div class="card-glow"></div>
+        <a href="https://github.com/ramaneon/routine" target="_blank" rel="noopener" class="link-content">
+          <div class="link-icon-box routine-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
+          <div class="link-texts">
+            <div class="link-headline">
+              <span class="link-name">Routine Android App</span>
+              <span class="mini-tag">Kotlin App</span>
+            </div>
+            <p class="link-sub">Native Android device routines &amp; background optimization</p>
+          </div>
+        </a>
+        <div class="card-btn-group">
+          <button class="action-icon-btn copy-btn" data-copy="https://github.com/ramaneon/routine" title="Copy Routine Link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- GITHUB FULL PROFILE -->
+      <div class="link-card" data-category="projects" data-title="github repositories code ramaneon open source developer">
+        <div class="card-glow"></div>
+        <a href="https://github.com/ramaneon" target="_blank" rel="noopener" class="link-content">
+          <div class="link-icon-box gh-bg">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </div>
+          <div class="link-texts">
+            <div class="link-headline">
+              <span class="link-name">GitHub All Repositories</span>
+            </div>
+            <p class="link-sub">@ramaneon · Browse all open source security &amp; web projects</p>
+          </div>
+        </a>
+        <div class="card-btn-group">
+          <button class="action-icon-btn copy-btn" data-copy="https://github.com/ramaneon" title="Copy GitHub Link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ═════════ 4. INQUIRIES & OFFICIAL CHANNELS ═════════ -->
+
+      <!-- OFFICIAL TECHIVIBE.IN WEBSITE -->
+      <div class="link-card" data-category="contact" data-title="techivibe in official site homepage raman kumar">
+        <div class="card-glow"></div>
+        <a href="https://techivibe.in" target="_blank" rel="noopener" class="link-content">
+          <div class="link-icon-box tv-domain-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div class="link-texts">
+            <div class="link-headline">
+              <span class="link-name">techivibe.in</span>
+              <span class="mini-tag">Official Domain</span>
+            </div>
+            <p class="link-sub">Official headquarters &amp; security portfolio</p>
+          </div>
+        </a>
+        <div class="card-btn-group">
+          <button class="action-icon-btn copy-btn" data-copy="https://techivibe.in" title="Copy techivibe.in Link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- LINKEDIN -->
+      <div class="link-card" data-category="contact" data-title="linkedin professional network raman kumar career contact">
         <div class="card-glow"></div>
         <a href="https://www.linkedin.com/in/raman-kumar-036320395/" target="_blank" rel="noopener" class="link-content">
           <div class="link-icon-box in-bg">
@@ -283,8 +444,8 @@
         </div>
       </div>
 
-      <!-- 8. TRYHACKME -->
-      <div class="link-card" data-category="code" data-title="tryhackme security ctf cyber ranking ramaneon">
+      <!-- TRYHACKME -->
+      <div class="link-card" data-category="contact" data-title="tryhackme security ctf cyber ranking ramaneon">
         <div class="card-glow"></div>
         <a href="https://tryhackme.com/p/ramaneon" target="_blank" rel="noopener" class="link-content">
           <div class="link-icon-box thm-bg">
@@ -296,7 +457,7 @@
             <div class="link-headline">
               <span class="link-name">TryHackMe Profile</span>
             </div>
-            <p class="link-sub">tryhackme.com/p/ramaneon · CTFs &amp; Security ranks</p>
+            <p class="link-sub">tryhackme.com/p/ramaneon · CTFs &amp; Security rankings</p>
           </div>
         </a>
         <div class="card-btn-group">
@@ -306,7 +467,7 @@
         </div>
       </div>
 
-      <!-- 9. DIRECT EMAIL -->
+      <!-- DIRECT EMAIL -->
       <div class="link-card" data-category="contact" data-title="email mail direct contact collab itstechy40@gmail.com">
         <div class="card-glow"></div>
         <a href="mailto:itstechy40@gmail.com" class="link-content">
@@ -320,7 +481,7 @@
             <div class="link-headline">
               <span class="link-name">Direct Inquiries &amp; Collabs</span>
             </div>
-            <p class="link-sub">itstechy40@gmail.com · Tap to send an email</p>
+            <p class="link-sub">itstechy40@gmail.com · Tap to send direct mail</p>
           </div>
         </a>
         <div class="card-btn-group">
@@ -336,18 +497,18 @@
     <div class="mobile-terminal-box">
       <div class="term-bar">
         <div class="term-dots"><span></span><span></span><span></span></div>
-        <span class="term-label">techivibe.sys v2.4</span>
+        <span class="term-label">techivibe.in :: cluster-sync</span>
       </div>
       <div class="term-content">
-        <p class="term-row"><span class="term-cyan">guest@mobile</span>:~$ ping techivibe</p>
-        <p class="term-row"><span class="term-green">64 bytes from techivibe.net: icmp_seq=1 ttl=64 time=0.42 ms [ONLINE]</span></p>
+        <p class="term-row"><span class="term-cyan">techivibe</span>:~$ curl -I https://techivibe.in</p>
+        <p class="term-row"><span class="term-green">HTTP/2 200 OK · SOCNeon · APK Decompiler · JARVIS v2 [SYNCD]</span></p>
       </div>
     </div>
 
     <!-- Mobile Footer -->
     <footer class="app-footer">
       <div class="footer-meta">
-        <span>© 2026 Techivibe</span> · <span>Raman Kumar (@ramaneon)</span>
+        <span>© 2026 Techivibe</span> · <span><a href="https://techivibe.in" target="_blank" rel="noopener" style="color:var(--accent-cyan);text-decoration:none;">techivibe.in</a></span>
       </div>
       <p class="footer-note">Handcrafted for mobile screens · GitHub Pages</p>
     </footer>
@@ -410,7 +571,7 @@
           <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https://ramaneon.github.io/techivibe/&color=00e5ff&bgcolor=0a0d14&margin=1" alt="Techivibe QR Code" loading="lazy" />
           <div class="qr-scan-line"></div>
         </div>
-        <p class="qr-text">Point your mobile camera to open <strong>Techivibe Hub</strong></p>
+        <p class="qr-text">Point mobile camera to open <strong>Techivibe Hub</strong></p>
         <div class="qr-actions">
           <button class="btn-primary" id="copy-hub-link-btn">Copy Hub URL</button>
         </div>
@@ -427,22 +588,23 @@
       <div class="modal-header">
         <div class="story-user-badge">
           <span class="status-pulse"></span>
-          <span>Live Status Story</span>
+          <span>techivibe.in Live Story</span>
         </div>
         <button class="modal-close-btn" id="close-story-modal" aria-label="Close">✕</button>
       </div>
       <div class="story-content">
         <div class="story-avatar-preview">TV</div>
-        <h3 class="story-title">What I'm currently working on</h3>
+        <h3 class="story-title">What I'm building at techivibe.in</h3>
         <p class="story-desc">
-          🔥 Building modern security tools &amp; reverse engineering workflows.<br><br>
-          ⚡ Experimenting with autonomous agents, offline log engines, and sleek interactive frontends.
+          🛡️ <strong>SOCNeon</strong> &amp; <strong>APK Decompiler</strong>: Private, in-browser analysis suites.<br><br>
+          🤖 <strong>JARVIS v2</strong>: Autonomous sub-second PC autopilot.<br><br>
+          🚀 Check out the Live Apps tab for instant browser demos.
         </p>
         <div class="story-tags">
+          <span>#techivibe.in</span>
           <span>#CyberSecurity</span>
-          <span>#FullStack</span>
-          <span>#Techivibe</span>
-          <span>#AlwaysCoding</span>
+          <span>#MITRE_ATT&amp;CK</span>
+          <span>#AI_Jarvis</span>
         </div>
       </div>
     </div>
