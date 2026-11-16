@@ -291,6 +291,36 @@ function initModals() {
       }
     });
   }
+
+  // Privacy Policy Modal
+  const privacyModal = document.getElementById('privacy-modal');
+  const privacyBtn = document.getElementById('privacy-policy-btn');
+  const closePrivacy = document.getElementById('close-privacy-modal');
+  const confirmPrivacy = document.getElementById('confirm-privacy-btn');
+
+  if (privacyBtn) privacyBtn.addEventListener('click', () => openModal(privacyModal));
+  if (closePrivacy) closePrivacy.addEventListener('click', () => closeModal(privacyModal));
+  if (confirmPrivacy) confirmPrivacy.addEventListener('click', () => closeModal(privacyModal));
+  if (privacyModal) {
+    privacyModal.addEventListener('click', (e) => {
+      if (e.target === privacyModal) closeModal(privacyModal);
+    });
+  }
+
+  // Terms & Conditions Modal
+  const termsModal = document.getElementById('terms-modal');
+  const termsBtn = document.getElementById('terms-conditions-btn');
+  const closeTerms = document.getElementById('close-terms-modal');
+  const confirmTerms = document.getElementById('confirm-terms-btn');
+
+  if (termsBtn) termsBtn.addEventListener('click', () => openModal(termsModal));
+  if (closeTerms) closeTerms.addEventListener('click', () => closeModal(termsModal));
+  if (confirmTerms) confirmTerms.addEventListener('click', () => closeModal(termsModal));
+  if (termsModal) {
+    termsModal.addEventListener('click', (e) => {
+      if (e.target === termsModal) closeModal(termsModal);
+    });
+  }
 }
 
 /* ─── TOUCH & MOUSE REACTIVE PARTICLES ─── */

@@ -507,10 +507,20 @@
 
     <!-- Mobile Footer -->
     <footer class="app-footer">
-      <div class="footer-meta">
-        <span>© 2026 Techivibe</span> · <span><a href="https://techivibe.in" target="_blank" rel="noopener" style="color:var(--accent-cyan);text-decoration:none;">techivibe.in</a></span>
+      <div class="footer-legal">
+        <p class="copyright-line">© 2026 TECHIVIBE. All rights reserved.</p>
+        <p class="author-line">Designed &amp; built by Raman</p>
       </div>
-      <p class="footer-note">Handcrafted for mobile screens · GitHub Pages</p>
+      <div class="footer-legal-links">
+        <button class="legal-link-btn" id="privacy-policy-btn" type="button">[Privacy Policy]</button>
+        <span class="legal-sep">·</span>
+        <button class="legal-link-btn" id="terms-conditions-btn" type="button">[Terms &amp; Conditions]</button>
+        <span class="legal-sep">·</span>
+        <a href="mailto:itstechy40@gmail.com" class="legal-link-btn">[Contact]</a>
+      </div>
+      <div class="footer-meta">
+        <span><a href="https://techivibe.in" target="_blank" rel="noopener" style="color:var(--accent-cyan);text-decoration:none;">techivibe.in</a></span>
+      </div>
     </footer>
 
     <!-- Safe-Area Spacer for Bottom Dock -->
@@ -606,6 +616,54 @@
           <span>#MITRE_ATT&amp;CK</span>
           <span>#AI_Jarvis</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- MODAL: PRIVACY POLICY -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <div class="modal-backdrop" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="privacy-title">Privacy Policy</h2>
+        <button class="modal-close-btn" id="close-privacy-modal" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body legal-modal-body">
+        <div class="legal-badge">🔒 Zero Tracking Architecture</div>
+        <p class="legal-paragraph">
+          <strong>Techivibe</strong> is engineered with a strict privacy-first doctrine.
+        </p>
+        <ul class="legal-list">
+          <li><strong>Zero Logs:</strong> No user IPs, requests, or click streams are tracked or stored.</li>
+          <li><strong>No Cookies:</strong> We do not set third-party tracking or advertising cookies.</li>
+          <li><strong>Client-Side:</strong> All interactive tools (including SOCNeon and APK Decompiler) run 100% locally in your browser.</li>
+        </ul>
+        <button class="btn-primary" id="confirm-privacy-btn">Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- MODAL: TERMS & CONDITIONS -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <div class="modal-backdrop" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="terms-title">Terms &amp; Conditions</h2>
+        <button class="modal-close-btn" id="close-terms-modal" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body legal-modal-body">
+        <div class="legal-badge">⚡ Open Source &amp; Fair Use</div>
+        <p class="legal-paragraph">
+          Welcome to the <strong>TECHIVIBE</strong> digital hub. By accessing our resources, tools, and links, you agree to:
+        </p>
+        <ul class="legal-list">
+          <li><strong>Educational &amp; Research:</strong> Security utilities and code are released for authorized research, optimization, and defensive education.</li>
+          <li><strong>Intellectual Property:</strong> Content, tools, and branding © 2026 TECHIVIBE / Raman Kumar.</li>
+          <li><strong>No Warranty:</strong> Open source software is provided "as is", without warranty of any kind.</li>
+        </ul>
+        <button class="btn-primary" id="confirm-terms-btn">Accept &amp; Close</button>
       </div>
     </div>
   </div>
