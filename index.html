@@ -18,6 +18,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://ramaneon.github.io/techivibe/profile.jpg" />
 
+  <!-- PWA & Mobile Web App Manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="profile.jpg" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,6 +55,11 @@
         <span class="status-text">techivibe.in ecosystem</span>
       </div>
       <div class="top-actions">
+        <!-- PWA Install Button (Dynamic) -->
+        <button class="top-btn" id="install-pwa-btn" style="display:none;" title="Install Techivibe App" aria-label="Install App">
+          <span class="icon">📲</span>
+          <span class="text">Install</span>
+        </button>
         <button class="top-btn" id="theme-btn" title="Toggle Theme" aria-label="Toggle Theme">
           <span class="icon" id="theme-icon">⚡</span>
           <span class="text">Theme</span>
@@ -81,6 +90,12 @@
         <p class="profile-bio">
           Security Researcher &amp; Full-Stack Engineer. Building offline tools, reverse engineering utilities, AI systems &amp; creator @Techivibe.
         </p>
+
+        <!-- Dynamic GitHub Real-Time Activity Feed -->
+        <a href="https://github.com/ramaneon" target="_blank" rel="noopener" class="gh-activity-pill" id="gh-activity-pill" style="display:none;" title="View on GitHub">
+          <span class="gh-dot pulse"></span>
+          <span class="gh-text" id="gh-activity-text">Fetching latest git event...</span>
+        </a>
       </div>
 
       <!-- Quick Action Metrics / Tags -->
@@ -89,6 +104,10 @@
           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
           <span>techivibe.in</span>
         </a>
+        <button class="chip-pill" id="nfc-trigger-btn" title="NFC Digital Card &amp; Tag Writer">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+          <span>NFC Pass</span>
+        </button>
         <button class="chip-pill" id="qr-trigger-btn">
           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
           <span>Share QR</span>
@@ -670,6 +689,56 @@
           <li><strong>No Warranty:</strong> Open source software is provided "as is", without warranty of any kind.</li>
         </ul>
         <button class="btn-primary" id="confirm-terms-btn">Accept &amp; Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- MODAL: NFC SMART PASS & DIGITAL CARD WRITER -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <div class="modal-backdrop" id="nfc-modal" role="dialog" aria-modal="true" aria-labelledby="nfc-title">
+    <div class="modal-card nfc-modal-card">
+      <div class="modal-header">
+        <h2 id="nfc-title">NFC Digital Smart Pass</h2>
+        <button class="modal-close-btn" id="close-nfc-modal" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body nfc-body">
+        
+        <!-- 3D Matte Cyber Card Visual -->
+        <div class="cyber-nfc-card" id="cyber-nfc-card">
+          <div class="card-chip-graphic">
+            <svg viewBox="0 0 36 28" width="36" height="28" fill="none">
+              <rect width="36" height="28" rx="5" fill="#f59e0b" opacity="0.85"/>
+              <path d="M0 14h36M12 0v28M24 0v28" stroke="#78350f" stroke-width="1.5"/>
+            </svg>
+            <div class="nfc-waves-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8.5 16.5a5 5 0 0 1 0-7"></path>
+                <path d="M12 19a8.5 8.5 0 0 1 0-12"></path>
+                <path d="M15.5 21.5a12 12 0 0 1 0-17"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="cyber-card-meta">
+            <span class="cyber-brand">TECHIVIBE // CYBER-PASS</span>
+            <span class="cyber-holder">RAMAN KUMAR</span>
+            <span class="cyber-domain">techivibe.in · @ramaneon</span>
+          </div>
+        </div>
+
+        <p class="nfc-status-hint" id="nfc-status-hint">
+          Tap any physical NFC card or phone tag to the back of this phone to clone your Techivibe digital identity.
+        </p>
+
+        <div class="nfc-actions">
+          <button class="btn-primary" id="write-nfc-btn">
+            <span>📡 Write to Blank NFC Tag</span>
+          </button>
+          <button class="btn-secondary" id="copy-nfc-payload-btn">
+            <span>Copy NFC URL Payload</span>
+          </button>
+        </div>
+
       </div>
     </div>
   </div>

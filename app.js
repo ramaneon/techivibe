@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initParticles();
   initAudioEngine();
+  initPWA();
+  initGitHubActivity();
+  initNFCFeatures();
 });
 
 /* ─── HAPTIC FEEDBACK FOR MOBILE TOUCH ─── */
@@ -319,6 +322,171 @@ function initModals() {
   if (termsModal) {
     termsModal.addEventListener('click', (e) => {
       if (e.target === termsModal) closeModal(termsModal);
+    });
+  }
+
+  // NFC Pass Modal
+  const nfcModal = document.getElementById('nfc-modal');
+  const nfcBtn = document.getElementById('nfc-trigger-btn');
+  const closeNfc = document.getElementById('close-nfc-modal');
+
+  if (nfcBtn) nfcBtn.addEventListener('click', () => openModal(nfcModal));
+  if (closeNfc) closeNfc.addEventListener('click', () => closeModal(nfcModal));
+  if (nfcModal) {
+    nfcModal.addEventListener('click', (e) => {
+      if (e.target === nfcModal) closeModal(nfcModal);
+    });
+  }
+}
+
+/* ─── PWA SERVICE WORKER & INSTALL PROMPT ─── */
+function initPWA() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch((err) => {
+        console.warn('SW registration failed:', err);
+      });
+    });
+  }
+
+  let deferredPrompt = null;
+  const installBtn = document.getElementById('install-pwa-btn');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (installBtn) {
+      installBtn.style.display = 'inline-flex';
+      installBtn.addEventListener('click', async () => {
+        haptic(20);
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === 'accepted') {
+            showToast('Techivibe App Installed! 🚀');
+          }
+          deferredPrompt = null;
+          installBtn.style.display = 'none';
+        }
+      });
+    }
+  });
+
+  window.addEventListener('appinstalled', () => {
+    if (installBtn) installBtn.style.display = 'none';
+    showToast('Techivibe is installed on your Home Screen');
+  });
+}
+
+/* ─── DYNAMIC GITHUB REAL-TIME ACTIVITY ─── */
+async function initGitHubActivity() {
+  const pill = document.getElementById('gh-activity-pill');
+  const textEl = document.getElementById('gh-activity-text');
+  if (!pill || !textEl) return;
+
+  const CACHE_KEY = 'techivibe_gh_activity';
+  const CACHE_TIME_KEY = 'techivibe_gh_activity_ts';
+  const now = Date.now();
+  const cachedData = sessionStorage.getItem(CACHE_KEY);
+  const cachedTime = sessionStorage.getItem(CACHE_TIME_KEY);
+
+  function timeAgo(dateString) {
+    const diffSec = Math.floor((new Date() - new Date(dateString)) / 1000);
+    if (diffSec < 60) return `${diffSec}s ago`;
+    const diffMin = Math.floor(diffSec / 60);
+    if (diffMin < 60) return `${diffMin}m ago`;
+    const diffHr = Math.floor(diffMin / 60);
+    if (diffHr < 24) return `${diffHr}h ago`;
+    const diffDays = Math.floor(diffHr / 24);
+    return `${diffDays}d ago`;
+  }
+
+  function displayActivity(repoName, action, timeStr) {
+    textEl.innerHTML = `<strong>Git:</strong> ${action} on <span style="color:#00e5ff">${repoName}</span> · ${timeStr}`;
+    pill.style.display = 'inline-flex';
+  }
+
+  if (cachedData && cachedTime && (now - parseInt(cachedTime, 10)) < 300000) {
+    try {
+      const parsed = JSON.parse(cachedData);
+      displayActivity(parsed.repo, parsed.action, parsed.time);
+      return;
+    } catch (e) {}
+  }
+
+  try {
+    const res = await fetch('https://api.github.com/users/ramaneon/events/public?per_page=5');
+    if (!res.ok) return;
+    const events = await res.json();
+    if (!Array.isArray(events) || events.length === 0) return;
+
+    // Find the first push or create or public event
+    const event = events.find(e => e.type === 'PushEvent') || events[0];
+    const rawRepo = event.repo ? event.repo.name.replace('ramaneon/', '') : 'techivibe';
+    let action = 'Pushed code';
+    if (event.type === 'CreateEvent') action = 'Created branch/repo';
+    if (event.type === 'WatchEvent') action = 'Starred repo';
+    const timeStr = timeAgo(event.created_at);
+
+    const cachePayload = { repo: rawRepo, action, time: timeStr };
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify(cachePayload));
+    sessionStorage.setItem(CACHE_TIME_KEY, now.toString());
+
+    displayActivity(rawRepo, action, timeStr);
+  } catch (err) {
+    // Graceful fallback to static message if offline or rate limited
+    textEl.innerHTML = `<strong>Git:</strong> Active in open source · @ramaneon`;
+    pill.style.display = 'inline-flex';
+  }
+}
+
+/* ─── NFC SMART PASS & WEB NFC API WRITER ─── */
+function initNFCFeatures() {
+  const writeBtn = document.getElementById('write-nfc-btn');
+  const copyPayloadBtn = document.getElementById('copy-nfc-payload-btn');
+  const statusHint = document.getElementById('nfc-status-hint');
+  const targetUrl = 'https://ramaneon.github.io/techivibe/';
+
+  if (copyPayloadBtn) {
+    copyPayloadBtn.addEventListener('click', () => {
+      haptic(15);
+      navigator.clipboard.writeText(targetUrl).then(() => {
+        showToast('NFC URL Payload Copied!');
+      });
+    });
+  }
+
+  if (writeBtn) {
+    writeBtn.addEventListener('click', async () => {
+      haptic(25);
+
+      if ('NDEFReader' in window) {
+        try {
+          const ndef = new NDEFReader();
+          statusHint.innerHTML = '<span style="color:#00e5ff">📡 Approaching NFC... Hold blank tag against back of device!</span>';
+          writeBtn.disabled = true;
+
+          await ndef.write({
+            records: [
+              { recordType: 'url', data: targetUrl }
+            ]
+          });
+
+          haptic(50);
+          statusHint.innerHTML = '<span style="color:#10b981">✓ NFC Tag Successfully Programmed with Techivibe!</span>';
+          showToast('NFC Tag Written Successfully!');
+          writeBtn.disabled = false;
+        } catch (err) {
+          writeBtn.disabled = false;
+          statusHint.innerHTML = `<span style="color:#ef4444">Write failed: ${err.message || 'Permission denied or timed out'}. You can copy the URL payload below.</span>`;
+        }
+      } else {
+        // Fallback for browsers without Web NFC (iOS Safari, Desktop)
+        navigator.clipboard.writeText(targetUrl).then(() => {
+          statusHint.innerHTML = '<span>Payload copied to clipboard! Paste into <strong>NFC Tools</strong> app (iOS/Android) to write to any tag.</span>';
+          showToast('NFC URL copied for NFC Tools app');
+        });
+      }
     });
   }
 }

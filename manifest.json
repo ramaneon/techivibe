@@ -1,0 +1,42 @@
+{
+  "name": "Techivibe · Raman Kumar",
+  "short_name": "Techivibe",
+  "description": "Official interactive link hub, live security tools & digital base for Techivibe & Raman Kumar (@ramaneon).",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07080c",
+  "theme_color": "#07080c",
+  "icons": [
+    {
+      "src": "profile.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "profile.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "social", "security", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Join Telegram",
+      "short_name": "Telegram",
+      "description": "Open Techivibe Telegram Channel",
+      "url": "https://t.me/techivibe",
+      "icons": [{ "src": "profile.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Live Tools",
+      "short_name": "Tools",
+      "description": "SOCNeon & APK Decompiler",
+      "url": "./index.html?filter=apps",
+      "icons": [{ "src": "profile.jpg", "sizes": "192x192" }]
+    }
+  ]
+}
